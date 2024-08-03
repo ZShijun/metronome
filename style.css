@@ -1,0 +1,85 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+.metronome-box {
+  position: relative;
+  width: 368px;
+  height: 624px;
+  margin: 100px auto 0;
+  background: url("bg.png") no-repeat -120px 0px;
+  background-size: 487px;
+}
+
+.metronome-box .pendulum {
+  position: absolute;
+  top: 150px;
+  left: 161px;
+  width: 54px;
+  height: 424px;
+  overflow: hidden;
+  background: url("bg.png") no-repeat 3px -170px;
+  animation: 1s infinite ease-in-out alternate;
+  background-size: 487px;
+  animation-delay: -500ms;
+  transform-origin: 22px 392px;
+}
+
+@keyframes pendulum {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.metronome-box .bpm-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 54px;
+  width: 280px;
+  transform: rotate(90deg);
+  transform-origin: right bottom;
+  background: transparent;
+  position: absolute;
+  top: 264px;
+  left: -288px;
+}
+
+.metronome-box .bpm-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 54px;
+  width: 54px;
+  transform: rotate(-90deg);
+  background: url("bg.png") no-repeat -38px -73px;
+  background-size: 487px;
+  cursor: grabbing;
+}
+
+.metronome-box .bpm-value {
+  position: absolute;
+  top: 568px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.control-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 20px;
+}
+.control-btns button {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
